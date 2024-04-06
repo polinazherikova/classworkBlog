@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1>User Profile</h1>
+    {% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" alt="Avatar">
+        {% else %}
+        <p>No avatar</p>
+    {% endif %}
+    <h4>Username:</h4> {{ user.username }}
+    <h4>Email:</h4> {{ user.email }}<br>
+   <br> <a href="{% url 'update_profile' %}">Change</a>
+{% endblock %}
